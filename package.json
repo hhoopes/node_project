@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "nodemon start",
-    "test": "jest --watchAll"
+    "test": "jest"
   },
   "author": "Heidi Hoopes",
   "license": "ISC"
