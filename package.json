@@ -12,11 +12,12 @@
   },
   "devDependencies": {
     "jest": "^26.1.0",
-    "jest-cli": "^26.1.0"
+    "jest-cli": "^26.1.0",
+    "jest-junit": "^11.0.1"
   },
   "scripts": {
     "start": "nodemon start",
-    "test": "jest"
+    "test": "jest --ci --testResultsProcessor=jest-junit"
   },
   "author": "Heidi Hoopes",
   "license": "ISC"
