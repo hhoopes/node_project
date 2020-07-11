@@ -19,6 +19,3 @@ workflows:
   build-and-test:
     jobs:
       - build-and-test
-general:
-  artifacts:
-     - $CIRCLE_TEST_REPORTS

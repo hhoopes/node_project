@@ -17,7 +17,8 @@
   },
   "scripts": {
     "start": "nodemon start",
-    "test": "jest --ci --testResultsProcessor=jest-junit"
+    "test": "jest --ci --testResultsProcessor=jest-junit",
+    "watch": "jest --watch"
   },
   "author": "Heidi Hoopes",
   "license": "ISC"
