@@ -13,13 +13,21 @@
   "devDependencies": {
     "jest": "^26.1.0",
     "jest-cli": "^26.1.0",
-    "jest-junit": "^11.0.1"
+    "jest-junit": "^11.0.1",
+    "jest-junit-reporter": "^1.1.0"
   },
   "scripts": {
     "start": "nodemon start",
-    "test": "jest --ci --testResultsProcessor=jest-junit",
+    "test": "jest --ci",
     "watch": "jest --watch"
   },
   "author": "Heidi Hoopes",
-  "license": "ISC"
+  "license": "ISC",
+  "jest": {
+    "testResultsProcessor": "./node_modules/jest-junit-reporter",
+    "reporters": [ "default", "jest-junit" ]
+  },
+  "jest-junit": {
+    "outputDirectory": "test_reports"
+  }
 }
