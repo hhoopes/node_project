@@ -3,7 +3,6 @@ orbs:
   node: circleci/node@1.1.6
 jobs:
   build-and-test:
-    context: Spoonacular APIs
     executor:
       name: node/default
     steps:
@@ -20,3 +19,4 @@ workflows:
   build-and-test:
     jobs:
       - build-and-test
+          context: Spoonacular APIs
