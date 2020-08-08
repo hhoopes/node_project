@@ -1,18 +1,14 @@
 const request = require('supertest')
+const app = require('../../app')
 
 let server;
 
 describe('/api/recipeCreations', () => {
-    beforeEach(() => { server = require('../../index'); })
-    afterEach(async () => {
-        server.close();
-    });
-
     let user;
     let ingredients;
 
     const exec = async () => {
-        return await request(server)
+        return await request(app)
         .post('/api/recipeCreations')
         .send({user: user, ingredients: ingredients })
     }

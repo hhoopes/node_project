@@ -3,3 +3,4 @@ uncaughtExceptions.log
 junit.xml
 .vscode/
 .env
+test-report.xml
