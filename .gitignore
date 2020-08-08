@@ -1,4 +1,5 @@
 node_modules
 uncaughtExceptions.log
 junit.xml
-vsode/
+.vscode/
+.env
