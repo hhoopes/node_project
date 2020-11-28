@@ -29,14 +29,18 @@ jobs:
 workflows:
   heroku_deploy:
     jobs:
-      - build
+      - build-and-test
       - heroku/deploy-via-git: # preconfigured job
-        requires: 
-          - build
-        filters:
-          branches:
-            only: master
+          requires: 
+            - build-and-test
+          filters:
+            branches:
+              only: master
   pr-check:
     jobs:
       - build-and-test:
           context: spoonacular-apis 
+          filters:
+            branches:
+              ignore:
+                - master
