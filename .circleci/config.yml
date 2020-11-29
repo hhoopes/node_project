@@ -35,7 +35,8 @@ jobs:
 workflows:
   heroku_deploy:
     jobs:
-      - build-and-test
+      - build-and-test:
+          context: spoonacular-apis 
       - deploy:
           requires: 
             - build-and-test
