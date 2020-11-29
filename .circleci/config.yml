@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
-  heroku: circleci/heroku@0.0.10.
+  heroku: circleci/heroku@1.2.3 # https://circleci.com/developer/orbs/orb/circleci/heroku
 
 jobs:
   build:
@@ -25,12 +25,18 @@ jobs:
           path: test_reports
       - store_artifacts:
           path: test_reports
+  deploy:
+    executor: heroku/default
+    steps:
+      - checkout
+      - heroku/install
+      - heroku/deploy-via-git
 
 workflows:
   heroku_deploy:
     jobs:
       - build-and-test
-      - heroku/deploy-via-git: # preconfigured job
+      - deploy
           requires: 
             - build-and-test
           filters:
