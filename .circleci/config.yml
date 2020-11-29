@@ -1,7 +1,17 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
+  heroku: circleci/heroku@1.2.3 # https://circleci.com/developer/orbs/orb/circleci/heroku
+
 jobs:
+  build:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
   build-and-test:
     executor:
       name: node/default
@@ -15,8 +25,29 @@ jobs:
           path: test_reports
       - store_artifacts:
           path: test_reports
+  deploy:
+    executor: heroku/default
+    steps:
+      - checkout
+      - heroku/install
+      - heroku/deploy-via-git
+
 workflows:
-  build-and-test:
+  heroku_deploy:
     jobs:
       - build-and-test:
           context: spoonacular-apis 
+      - deploy:
+          requires: 
+            - build-and-test
+          filters:
+            branches:
+              only: master
+  pr-check:
+    jobs:
+      - build-and-test:
+          context: spoonacular-apis 
+          filters:
+            branches:
+              ignore:
+                - master
