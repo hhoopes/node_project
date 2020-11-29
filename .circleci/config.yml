@@ -36,7 +36,7 @@ workflows:
   heroku_deploy:
     jobs:
       - build-and-test
-      - deploy
+      - deploy:
           requires: 
             - build-and-test
           filters:
