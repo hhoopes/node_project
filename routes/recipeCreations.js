@@ -4,6 +4,7 @@ const axios = require('axios');
 // const winston = require('winston/lib/winston/config');
 
 router.post('/', async (req, res) => {
+    console.log(req.body)
     const recipe = await findRecipeFromIngredients(req.body.ingredients);
     let creation = {
         creator: req.body.user,

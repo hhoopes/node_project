@@ -9,5 +9,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // require('./startup/logging')();
 require('./startup/routes')(app);
+require('./startup/db')(app);
 
 module.exports = app;
