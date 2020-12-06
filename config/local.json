@@ -1,3 +1,5 @@
 {
-  "db": "mongodb://localhost/recipes"
+  "mongo": {
+    "host": "mongodb://localhost/recipes"
+  }
 }
