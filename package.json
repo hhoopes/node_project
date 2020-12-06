@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "@shelf/jest-mongodb": "^1.2.3",
     "axios": "^0.19.2",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
@@ -35,7 +36,8 @@
     "reporters": [
       "default",
       "jest-junit"
-    ]
+    ],
+    "preset": "@shelf/jest-mongodb"
   },
   "jest-junit": {
     "outputDirectory": "test_reports"

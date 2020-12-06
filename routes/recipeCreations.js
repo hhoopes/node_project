@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-// const winston = require('winston/lib/winston/config');
 
 router.post('/', async (req, res) => {
     console.log(req.body)

@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
   isAdmin: Boolean
 });
 
-const User = mongoose.model('User', userSchema);
+const User = new mongoose.model('User', userSchema);
 
 function validateUser(user) {
   const schema = Joi.object({

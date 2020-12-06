@@ -1,0 +1,5 @@
+{
+  "mongo": {
+    "host": "mongodb://localhost/recipes_tests"
+  }
+}
